@@ -18,9 +18,13 @@
     
     <script type="text/javascript">
     
+      let prefix;
+
       let nav;
 
       function init() {
+
+        prefix = "{{ site.baseurl }}";  
 
         let links = [
           { label: "Home", link: "#" },
@@ -29,7 +33,7 @@
           { label: "About", link: "#" },
         ];
 
-        nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
+        nav = new navMenu(prefix, document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
         nav.buildMenu();
       }
 
@@ -44,7 +48,7 @@
       <nav id="nav">
 
         <a id="menu-toggle" class="menu-toggle">
-          <img src="menu-toggle.png">
+          <img src="{{ site.baseurl }}/assets/interface/menu-toggle.png">
         </a>
         
         <div id="menu-container" class="menu-container menu-container-closed"></div>
