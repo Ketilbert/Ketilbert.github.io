@@ -2,8 +2,7 @@
   
   Responsive Break Points
   -----------------------
-  Extra Extra Small <   320
-  Extra Small       >=  320
+  Extra Small       <   320
   Small             >=  576
   Medium            >=  768
   Large             >=  992
@@ -23,7 +22,7 @@
 @font-face {
 
   font-family: cent-goth;
-  src: url(../fonts/gothic.ttf);
+  src: url(gothic.ttf);
 }
 
 * {
@@ -42,8 +41,8 @@ body {
   user-select: none;
 }
 
-/** Extra Extra Small */
-@media screen and (max-width: 320px) {
+/** Extra Small */
+@media screen and (max-width: 319.98px) {
 
   html {
 
@@ -64,7 +63,57 @@ body {
   }
 }
 
-@media screen and (min-width: 1200px) {
+/** Small */
+@media screen and (min-width: 320px) and (max-width: 575.98px) {
+
+  html {
+
+    font-size: 16px;
+  }
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav {
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+/** Medium */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+  html {
+
+    font-size: 18px;
+  }
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav {
+
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+}
+
+/** Large */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+  html {
+
+    font-size: 18px;
+  }
 
   .container {
 
@@ -72,5 +121,54 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
+
+  nav {
+
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
+  }  
 }
 
+/** Extra Large */
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+  html {
+
+    font-size: 18px;
+  }
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav {
+
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
+  }  
+}
+
+/** Extra Extra Large */
+@media screen and (min-width: 1200px) {
+
+  html {
+
+    font-size: 18px;
+  }
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav {
+
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
+  }  
+}
