@@ -22,7 +22,7 @@
 @font-face {
 
   font-family: cent-goth;
-  src: url(gothic.ttf);
+  src: url(../fonts/gothic.ttf);
 }
 
 * {
