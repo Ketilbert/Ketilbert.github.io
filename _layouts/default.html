@@ -33,7 +33,7 @@
           { label: "About", link: "#" },
         ];
 
-        nav = new navMenu(prefix, document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
+        nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
         nav.buildMenu();
       }
 
