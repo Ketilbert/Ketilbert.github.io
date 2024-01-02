@@ -11,28 +11,54 @@
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/nav-menu.css" />
-
-    <!--link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" /-->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/utility.js"></script>
     
     <script type="text/javascript">
-      
+    
+      let nav;
+
       function init() {
 
-        console.log("Hi! Again");
+        let links = [
+          { label: "Home", link: "#" },
+          { label: "Explore", link: "#" },
+          { label: "Blog", link: "#" },
+          { label: "About", link: "#" },
+        ];
+
+        nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
+        nav.buildMenu();
       }
 
     </script>
       
-    
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body onload="init();">
-    <div class="wrapper-masthead">
+    
+    <div class="container">
+
+      <nav id="nav">
+
+        <a id="menu-toggle" class="menu-toggle">
+          <img src="menu-toggle.png">
+        </a>
+        
+        <div id="menu-container" class="menu-container menu-container-closed"></div>
+
+      </nav>
+    
+      <div id="main" role="main" class="container">
+        {{ content }}
+      </div>
+        
+    </div>
+
+    
+    <!--div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
@@ -50,9 +76,7 @@
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
+
 
     <div class="wrapper-footer">
       <div class="container">
@@ -62,6 +86,7 @@
       </div>
     </div>
 
-    {% include analytics.html %}
+    {% include analytics.html %} -->
+
   </body>
 </html>
