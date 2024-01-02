@@ -1,0 +1,76 @@
+/*
+  
+  Responsive Break Points
+  -----------------------
+  Extra Extra Small <   320
+  Extra Small       >=  320
+  Small             >=  576
+  Medium            >=  768
+  Large             >=  992
+  Extra Large       >=  1200
+  Extra Extra Large >=  1400
+  
+*/
+
+:root {
+
+  --menu-height: 0px;
+  
+  --nc-purple: rgb(182, 33, 112);
+  --nc-grey: #565C6A;
+}
+
+@font-face {
+
+  font-family: cent-goth;
+  src: url(../fonts/gothic.ttf);
+}
+
+* {
+
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {}
+
+body {
+
+  font-family: cent-goth;
+  user-select: none;
+}
+
+/** Extra Extra Small */
+@media screen and (max-width: 320px) {
+
+  html {
+
+    font-size: 14px;
+  }
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav {
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
