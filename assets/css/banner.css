@@ -1,0 +1,173 @@
+/*
+  
+  Responsive Break Points
+  -----------------------
+  Extra Small       <   320
+  Small             >=  576
+  Medium            >=  768
+  Large             >=  992
+  Extra Large       >=  1200
+  Extra Extra Large >=  1400
+  
+*/
+
+/** Extra Small */
+@media screen and (max-width: 319.98px) {
+
+  .banner {
+
+    color: white;
+    text-align: center;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 1rem 0 0.65rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0 0 1rem 0;  
+  }
+}
+
+/** Small */
+@media screen and (min-width: 320px) and (max-width: 575.98px) {
+  
+  .banner {
+
+    color: white;
+    text-align: center;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin: 1rem 0 0.2rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0 0 1rem 0;  
+  } 
+}
+
+/** Medium */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+  .banner {
+
+    color: white;
+    text-align: center;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 0.9rem 0 0.3rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 0.8rem;
+    margin: 0 0 1rem 0;  
+  } 
+}
+
+/** Large */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+  .banner {
+
+    color: white;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    margin: 0.9rem 0 0.3rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;  
+  } 
+}
+
+/** Extra Large */
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+  .banner {
+  
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;
+
+    color: white;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    margin: 0.9rem 0 0.3rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;  
+  }    
+}
+
+/** Extra Extra Large */
+@media screen and (min-width: 1200px) {
+
+  .banner {
+  
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;
+
+    color: white;
+    background-color: var(--nc-grey);
+    padding: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+    margin: 1rem 0 0 0;  
+  }
+
+  .banner-title {
+
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    margin: 0.9rem 0 0.3rem 0;
+  }
+  
+  .banner-subtitle {
+  
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;  
+  }  
+}

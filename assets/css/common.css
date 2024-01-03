@@ -14,9 +14,27 @@
 :root {
 
   --menu-height: 0px;
-  
+
+  --horizontal-margin: 3rem;
+
   --nc-purple: rgb(182, 33, 112);
   --nc-grey: #565C6A;
+}
+
+@media screen and (min-width: 320px) and (max-width: 575.98px) {
+
+  :root {
+
+    --horizontal-margin: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+  :root {
+
+    --horizontal-margin: 1.2rem;
+  }
 }
 
 @font-face {
@@ -105,6 +123,12 @@ body {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
   }
+
+  .banner {
+    
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;  
+  }  
 }
 
 /** Large */
@@ -126,6 +150,12 @@ body {
 
     grid-column: 1 / 11;
     grid-row: 1 / 2;
+  }  
+
+  .banner {
+    
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;  
   }  
 }
 
@@ -149,6 +179,12 @@ body {
     grid-column: 1 / 11;
     grid-row: 1 / 2;
   }  
+
+  .banner {
+    
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;  
+  }  
 }
 
 /** Extra Extra Large */
@@ -163,7 +199,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto;
   }
 
   nav {
@@ -171,4 +207,10 @@ body {
     grid-column: 1 / 11;
     grid-row: 1 / 2;
   }  
+
+  .banner {
+    
+    grid-column: 1 / 11;
+    grid-row: 2 / 3;  
+  }
 }
