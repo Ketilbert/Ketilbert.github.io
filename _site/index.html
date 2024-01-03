@@ -24,10 +24,12 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
 
+    <script type="text/javascript" src="/assets/js/carousel.js"></script>
     <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="/assets/js/utility.js"></script>
     
@@ -35,6 +37,7 @@
     
       let prefix;
       let nav;
+      let carousel;
 
       function init() {
 
@@ -49,6 +52,14 @@
 
         nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
         nav.buildMenu();
+
+        if(document.getElementById("carousel-container") !== null) {
+
+          console.log("Use Carousel");
+
+          carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
+          carousel.buildCarousel();
+        }
       }
 
     </script>
@@ -57,7 +68,7 @@
 
   <body onload="init();">
     
-    <div class="container">
+    <div id="main" role="main" class="container">
 
       <nav id="nav">
 
@@ -75,9 +86,25 @@
         <p class="banner-title">The Wentworth Castle Trust</p>
         <p class="banner-subtitle">Preserving the heritage of Wentworth Castle and its associated buildings</p>
       </div>
-      
-      <div id="main" role="main" class="container">
-        <div class="posts">
+
+      <div id="carousel-container" class="carousel-container">
+
+  <div id="carousel-image-0" class="carousel-image" style="background-image: url(/images/home-0.jpg);"></div>
+  <div id="carousel-image-1" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-1.jpeg);"></div>
+  <div id="carousel-image-2" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-2.jpeg);"></div>
+    
+  <div id="carousel-controls" class="carousel-controls"></div>
+    
+</div>
+
+<img id="carousel-source-0" class="carousel-source" src="/images/home-0.jpg">
+<img id="carousel-source-1" class="carousel-source" src="/images/home-1.jpeg">
+<img id="carousel-source-2" class="carousel-source" src="/images/home-2.jpeg">
+
+<div style="grid-column: 1/11; grid-row: 4/5; width: 100%; background-color: green;">
+YO
+</div>
+<!--div class="posts">
   
     <article class="post">
 
@@ -91,11 +118,9 @@
       <a href="/Hello-World/" class="read-more">Read More</a>
     </article>
   
-</div>
-      </div>
+</div-->
         
     </div>
-
     
     <!--div class="wrapper-masthead">
       <div class="container">

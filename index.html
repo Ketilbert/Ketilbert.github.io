@@ -4,7 +4,24 @@ title: The Wentworth Castle Trust
 description: Preserving the heritage of Wentworth Castle and its associated buildings
 ---
 
-<div class="posts">
+<div id="carousel-container" class="carousel-container">
+
+  <div id="carousel-image-0" class="carousel-image" style="background-image: url({{ site.baseurl }}/images/home-0.jpg);"></div>
+  <div id="carousel-image-1" class="carousel-image carousel-image-inactive" style="background-image: url({{ site.baseurl }}/images/home-1.jpeg);"></div>
+  <div id="carousel-image-2" class="carousel-image carousel-image-inactive" style="background-image: url({{ site.baseurl }}/images/home-2.jpeg);"></div>
+    
+  <div id="carousel-controls" class="carousel-controls"></div>
+    
+</div>
+
+<img id="carousel-source-0" class="carousel-source" src="{{ site.baseurl }}/images/home-0.jpg">
+<img id="carousel-source-1" class="carousel-source" src="{{ site.baseurl }}/images/home-1.jpeg">
+<img id="carousel-source-2" class="carousel-source" src="{{ site.baseurl }}/images/home-2.jpeg">
+
+<div style="grid-column: 1/11; grid-row: 4/5; width: 100%; background-color: green;">
+YO
+</div>
+<!--div class="posts">
   {% for post in site.posts %}
     <article class="post">
 
@@ -17,4 +34,4 @@ description: Preserving the heritage of Wentworth Castle and its associated buil
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
-</div>
+</div-->

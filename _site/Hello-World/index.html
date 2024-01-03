@@ -26,10 +26,12 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
 
+    <script type="text/javascript" src="/assets/js/carousel.js"></script>
     <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="/assets/js/utility.js"></script>
     
@@ -37,6 +39,7 @@
     
       let prefix;
       let nav;
+      let carousel;
 
       function init() {
 
@@ -51,6 +54,14 @@
 
         nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
         nav.buildMenu();
+
+        if(document.getElementById("carousel-container") !== null) {
+
+          console.log("Use Carousel");
+
+          carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
+          carousel.buildCarousel();
+        }
       }
 
     </script>
@@ -59,7 +70,7 @@
 
   <body onload="init();">
     
-    <div class="container">
+    <div id="main" role="main" class="container">
 
       <nav id="nav">
 
@@ -77,9 +88,8 @@
         <p class="banner-title">The Wentworth Castle Trust</p>
         <p class="banner-subtitle">Preserving the heritage of Wentworth Castle and its associated buildings</p>
       </div>
-      
-      <div id="main" role="main" class="container">
-        <article class="post">
+
+      <article class="post">
   <h1>You're up and running!</h1>
 
   <div class="entry">
@@ -98,10 +108,8 @@
   
 </article>
 
-      </div>
         
     </div>
-
     
     <!--div class="wrapper-masthead">
       <div class="container">
