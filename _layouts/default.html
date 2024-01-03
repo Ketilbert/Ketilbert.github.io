@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
@@ -9,6 +11,7 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/banner.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/common.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
@@ -55,7 +58,12 @@
         <div id="menu-container" class="menu-container menu-container-closed"></div>
 
       </nav>
-    
+
+      <div class="banner">
+        <p class="banner-title">{{ page.title }}</p>
+        <p class="banner-subtitle">{{ page.description }}</p>
+      </div>
+      
       <div id="main" role="main" class="container">
         {{ content }}
       </div>
