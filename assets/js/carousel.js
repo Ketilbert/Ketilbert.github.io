@@ -23,41 +23,53 @@ class imageCarousel {
 
   buildCarousel() {
 
-    /***************
-     * CODE TO CYCLE THROUGH IMAGES DYNAMICALLY!!!!
-     * ALSO put IN RESIZE FUNCTION TO RECALCULATE ON RESIZE
-     * DO THIS IN NAVBAR ALSO
-     * AND POSITION IMAGES - MAY NEED TO DO AWAY WITH CLASSES AND USE IDs
-     */
-    let firstImage = document.getElementById("carousel-source-0");
-    let secondImage = document.getElementById("carousel-source-1");
-    let thirdImage = document.getElementById("carousel-source-2");
-    let height = firstImage.height;
-    this.#height = height;
-  
-    this.#container.style.height = (height + "px");
-    document.getElementById("carousel-image-0").style.height = (height + "px");
-    document.getElementById("carousel-image-1").style.height = (height + "px");
-    document.getElementById("carousel-image-2").style.height = (height + "px");
-    this.#images.push(firstImage); this.#images.push(secondImage); this.#images.push(thirdImage);
+    // Cycle through the source images on the document, add them to the carousel
+    let count = 0;
+    let complete = false;
+    while(!complete) {
 
+      let image = document.getElementById("carousel-image-" + count);
+      if(image !== null) {
+
+        if(count === 0) {
+
+          let first = document.getElementById("first-image");
+          this.#height = first.height;
+          this.#container.style.height = (this.#height + "px");
+        }
+
+        image.style.height = (this.#height + "px");
+        this.#images.push(image);
+        this.#container.appendChild(image);
+
+      } else {
+
+        complete = true;
+      }
+
+      count++;
+    }
+  
     // Build the carousel controls
     for(let a = 0; a < this.#images.length; a++) {
 
-      let button = document.createElement("a");
+      let button = document.createElement("p");
+      button.id = ("carousel-button-" + a);
       button.classList.add("carousel-button");
 
       if(a === 0)
         button.classList.add("carousel-button-active");
 
       button.href = "#";
-      button.innerHTML = a;
+      button.innerHTML = "&#8226;";
       button.onclick = this.#cycle.bind(this, a);
-
+      
       this.#buttons.push(button);
       this.#controls.appendChild(button);
     }
   }
+
+  resizeCarousel() {}
 
   #cycle(index) {
 
@@ -72,17 +84,18 @@ class imageCarousel {
 
       let active = document.getElementById("carousel-image-" + this.#current);
       active.classList.add("carousel-slide-active");
-      active.addEventListener("animationend", function(index, active) {
+      let activeButton = document.getElementById("carousel-button-" + this.#current);
+      active.addEventListener("animationend", function(index, active, button) {
 
         if(event.animationName === "frames-carousel-slide-active") {
           
           active.classList.remove("carousel-slide-active");
-          this.#makeInactive(active);
+          this.#makeInactive(active, button);
           this.#current = index;
           this.#animating = false;
         }
 
-      }.bind(this, index, active));
+      }.bind(this, index, active, activeButton));
 
       let inactiveStart = (direction === "RIGHT") ? "100%" : "-100%";
       setCssVar("--carousel-start-inactive", inactiveStart);
@@ -91,26 +104,29 @@ class imageCarousel {
       let inactive = document.getElementById("carousel-image-" + index);
       inactive.style.left = inactiveStart;
       inactive.style.display = "block";
-      inactive.classList.add("carousel-slide-inactive");    
-      inactive.addEventListener("animationend", function(inactive) {
+      inactive.classList.add("carousel-slide-inactive"); 
+      let inactiveButton = document.getElementById("carousel-button-" + index);   
+      inactive.addEventListener("animationend", function(inactive, button) {
 
         if(event.animationName === "frames-carousel-slide-inactive") {
 
           inactive.classList.remove("carousel-slide-inactive");
-          this.#makeActive(inactive);
+          this.#makeActive(inactive, button);
         }
 
-      }.bind(this, inactive));        
+      }.bind(this, inactive, inactiveButton));        
     }
   }
 
-  #makeActive(elem) {
+  #makeActive(image, button) {
 
-    elem.style.left = "0%";
+    image.style.left = "0%";
+    button.classList.add("carousel-button-active");
   }
 
-  #makeInactive(elem) {
+  #makeInactive(image, button) {
 
-    elem.style.display = "none";
+    image.style.display = "none";
+    button.classList.remove("carousel-button-active");    
   }
 }

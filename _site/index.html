@@ -55,8 +55,6 @@
 
         if(document.getElementById("carousel-container") !== null) {
 
-          console.log("Use Carousel");
-
           carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
           carousel.buildCarousel();
         }
@@ -93,13 +91,20 @@
   <div id="carousel-image-1" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-1.jpeg);"></div>
   <div id="carousel-image-2" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-2.jpeg);"></div>
     
+  <div class="carousel-info-panel">
+
+    <h1>What We Do</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+  </div>
+  
   <div id="carousel-controls" class="carousel-controls"></div>
     
 </div>
 
-<img id="carousel-source-0" class="carousel-source" src="/images/home-0.jpg">
-<img id="carousel-source-1" class="carousel-source" src="/images/home-1.jpeg">
-<img id="carousel-source-2" class="carousel-source" src="/images/home-2.jpeg">
+<img id="first-image" src="/images/home-0.jpg">
 
 <div style="grid-column: 1/11; grid-row: 4/5; width: 100%; background-color: green;">
 YO
