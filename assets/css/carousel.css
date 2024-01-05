@@ -153,23 +153,45 @@
     right: 50px;
     width: 400px;
     height: 500px;
-    background-color: ghostwhite;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../interface/tw-statue.jpg");
     box-shadow: 0 0 3px 3px rgba(80, 80, 80, 0.75);
-    padding: 1rem 1rem 1rem 1rem;
     z-index: 1;
   }
 
   .carousel-info-panel h1 {
 
     color: var(--nc-purple);
-    font-size: 1.4rem;
+    font-size: 2.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin: 0 0 0.5rem 0;
+    margin: 13rem 0 auto 1rem;
   }
 
-  .carousel-info-panel p {  
+  .carousel-info-panel div {
 
+    position: absolute;
+    bottom: 0;
+    background-color: var(--nc-grey);
+    padding: 1.25rem;
+  }
+
+  .carousel-info-panel div p {  
+
+    color: white;
     line-height: 1.25;
+  }
+
+  .carousel-info-panel div a {
+    
+    color: var(--nc-purple);
+    font-weight: bold;
+    text-decoration: none;
+    margin: 1rem 0 0 0;
+    display: block;
+  }
+
+  .carousel-info-panel div a:hover {
+
+    color: blue;
   }
 }
