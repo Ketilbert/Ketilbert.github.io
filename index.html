@@ -32,20 +32,37 @@ description: Preserving the heritage of Wentworth Castle and its associated buil
 
 <img id="first-image" src="{{ site.baseurl }}/images/home-0.jpg">
 
-<div style="grid-column: 1/11; grid-row: 4/5; width: 100%; background-color: green;">
-  {{ site.url }}
+<div class="latest-posts">
+    
+  <div class="articles">
+  
+    <p class="articles-header">Latest Posts</p>
+    <!-- Iterate through all the articles in _POSTS -->
+    {% for post in site.posts %}
+
+      <!-- Filter any posts that are not published or flagged as latest -->
+      {% if post.published == true %}
+      {% if post.latest == true %}
+
+        <div class="article-summary">
+
+          <img src="{{ site.baseurl }}/images/{{ post.previewImage }}">
+
+          <div class="article-summary-container">
+
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.previewSummary }}</p>
+            <a href="{{ site.baseurl}}{{ post.url }}">Read More...</a>
+
+          </div>
+        
+        </div>
+
+      {% endif %}
+      {% endif %}
+    
+    {% endfor %}
+  
+  </div>
+
 </div>
-<!--div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div-->

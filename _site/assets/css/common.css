@@ -21,6 +21,7 @@
   --carousel-end-inactive: 0%;
 
   --horizontal-margin: 3rem;
+  --vertical-margin: 1.5rem;
 
   --nc-purple: rgb(182, 33, 112);
   --nc-grey: #565C6A;
@@ -224,4 +225,22 @@ body {
     grid-column: 1 / 11;
     grid-row: 3 / 4;      
   }
+
+  .latest-posts {
+
+    grid-column: 1 / 11;
+    grid-row: 4 / 5;          
+  }
+
+  .article-header {
+
+    grid-column: 1 / 11;
+    grid-row: 3 / 4;      
+  }  
+
+  .article-content {
+
+    grid-column: 2 / 10;
+    grid-row: 4 / 5;      
+  }    
 }

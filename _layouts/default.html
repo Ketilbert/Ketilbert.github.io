@@ -9,6 +9,7 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/articles.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/banner.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/common.css" />
@@ -67,8 +68,8 @@
       </nav>
 
       <div class="banner">
-        <p class="banner-title">The Wentworth Castle Trust</p>
-        <p class="banner-subtitle">Preserving the heritage of Wentworth Castle and its associated buildings</p>
+        <p class="banner-title">{{ page.title }}</p>
+        <p class="banner-subtitle">{{ page.description }}</p>
       </div>
 
       {{ content }}

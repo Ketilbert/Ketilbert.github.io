@@ -1,0 +1,133 @@
+/** Extra Extra Large */
+@media screen and (min-width: 1200px) {
+
+  .articles {
+
+    border-top: solid 2px var(--nc-grey);
+    border-bottom: solid 2px var(--nc-grey);
+    margin: var(--vertical-margin) var(--horizontal-margin) var(--vertical-margin) var(--horizontal-margin);
+  }
+
+  .articles-header {
+
+    width: 33%;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: var(--nc-grey);
+    padding: 1.5rem;
+  }
+
+  .article-summary {
+
+    border-bottom: solid 1px lightgrey;
+    padding: 0 0 0.5rem 0;
+    margin: 1.5rem 0 1.5rem 1.5rem;
+  }
+
+  .article-summary img {  /* Image Preview */
+
+    width: 160px;
+    height: 120px;
+    border: solid 1px var(--nc-grey);
+    margin: 0 1rem 0 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .article-summary-container {
+
+    width: 900px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .article-summary-container h1 {
+
+    font-size: 1.4rem;
+    color: var(--nc-purple);
+    text-transform: uppercase;
+  }
+
+  .article-summary-container p {
+
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0 0 0.5rem 0;
+  }  
+
+  .article-summary-container a {
+
+    color: var(--nc-grey);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .article-summary-container a:hover {
+
+    color: var(--nc-purple);
+  }
+
+  .article-info {
+
+    width: 400px;
+    color: white;
+    background-color: var(--nc-purple);
+    border-radius: 0 0 35px 35px;
+    padding: 0.75rem 2rem 0.75rem 2rem;
+    margin: 0 var(--horizontal-margin) 0 var(--horizontal-margin);
+  }
+  
+  .article-info h1 {
+
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+  }
+
+  .article-info h2 {
+
+    font-size: 0.7rem;
+  }  
+
+  .article-page {
+
+    background-color: gainsboro;
+    padding: 2rem;
+    margin: var(--vertical-margin) 0 0 0;
+  }
+
+  .article-page p {
+
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .article-page .first {
+
+    margin-top: 0 !important;
+  }
+
+  .article-page .img-container {
+    width: 50%;
+    margin: 2rem auto 2rem auto;
+    display: block;
+  }
+
+  .article-page .img-container img {
+
+    width: 100%;
+    border: solid 2px var(--nc-grey);
+    display: block;
+  }
+  
+  .article-page .img-container p {
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 6px 0 0 0;
+  }  
+}
