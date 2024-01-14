@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The Wentworth Castle Trust – The Wentworth Castle Trust – </title>
+    <title>The Wentworth Castle</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -15,8 +15,8 @@
     <meta name="author" content="The Wentworth Castle Trust" />
 
     
-    <meta property="og:title" content="The Wentworth Castle Trust" />
-    <meta property="twitter:title" content="The Wentworth Castle Trust" />
+    <meta property="og:title" content="The Wentworth Castle" />
+    <meta property="twitter:title" content="The Wentworth Castle" />
     
 
     <!--[if lt IE 9]>
@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/learn.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
 
@@ -34,8 +35,13 @@
     <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="/assets/js/utility.js"></script>
     
+    
+    
+
     <script type="text/javascript">
     
+      
+
       let prefix;
       let nav;
       let carousel;
@@ -45,10 +51,10 @@
         prefix = "";  
 
         let links = [
-          { label: "Home", link: "#" },
-          { label: "Explore", link: "#" },
-          { label: "Blog", link: "#" },
-          { label: "About", link: "#" },
+          { label: "Home", link: "/index.html" },
+          { label: "Learn", link: "/learn.html" },
+          { label: "Explore", link: "/explore.html" },
+          { label: "About", link: "/about.html" }
         ];
 
         nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
@@ -59,6 +65,8 @@
           carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
           carousel.buildCarousel();
         }
+
+        
       }
 
     </script>
@@ -66,31 +74,31 @@
   </head>
 
   <body onload="init();">
-    
+
     <div id="main" role="main" class="container">
 
       <nav id="nav">
 
         <a id="menu-toggle" class="menu-toggle">
-          <img src="/assets/interface/menu-toggle.png">
+          <img src="/images/interface/menu-toggle.png">
         </a>
         
-        <img class="nav-menu-image" src="/assets/interface/nc-logo-circle.png">
+        <img class="nav-menu-image" src="/images/interface/nc-logo-circle.png">
 
         <div id="menu-container" class="menu-container menu-container-closed"></div>
 
       </nav>
 
       <div class="banner">
-        <p class="banner-title">The Wentworth Castle Trust</p>
+        <p class="banner-title">The Wentworth Castle</p>
         <p class="banner-subtitle">Preserving the heritage of Wentworth Castle and its associated buildings</p>
       </div>
 
       <div id="carousel-container" class="carousel-container">
 
-  <div id="carousel-image-0" class="carousel-image" style="background-image: url(/images/home-0.jpg);"></div>
-  <div id="carousel-image-1" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-1.jpeg);"></div>
-  <div id="carousel-image-2" class="carousel-image carousel-image-inactive" style="background-image: url(/images/home-2.jpg);"></div>
+  <div id="carousel-image-0" class="carousel-image" style="background-image: url(/images/carousel/home-0.jpg);"></div>
+  <div id="carousel-image-1" class="carousel-image carousel-image-inactive" style="background-image: url(/images/carousel/home-1.jpeg);"></div>
+  <div id="carousel-image-2" class="carousel-image carousel-image-inactive" style="background-image: url(/images/carousel/home-2.jpg);"></div>
     
   <div class="carousel-info-panel">
 
@@ -102,7 +110,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
 
-      <a href="#">Learn More Here.</a>
+      <a href="/about.html">Learn More Here.</a>
 
     </div>
 
@@ -112,7 +120,7 @@
     
 </div>
 
-<img id="first-image" src="/images/home-0.jpg">
+<img id="first-image" src="/images/carousel/home-0.jpg">
 
 <div class="latest-posts">
     
@@ -128,7 +136,7 @@
 
         <div class="article-summary">
 
-          <img src="/images/sc-preview.jpg">
+          <img src="/images/articles/nc-preview.jpg">
 
           <div class="article-summary-container">
 
@@ -151,7 +159,7 @@
 
         <div class="article-summary">
 
-          <img src="/images/sc-preview.jpg">
+          <img src="/images/articles/kw-preview.jpg">
 
           <div class="article-summary-container">
 
@@ -174,7 +182,7 @@
 
         <div class="article-summary">
 
-          <img src="/images/sc-preview.jpg">
+          <img src="/images/articles/sc-preview.jpg">
 
           <div class="article-summary-container">
 
@@ -197,49 +205,6 @@
 
         
     </div>
-    
-    <!--div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">The Wentworth Castle Trust</a></h1>
-            <p class="site-description"></p>
-          </div>
-
-          <nav>
-            <a href="/">Blog1</a>
-            <a href="/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-        </footer>
-      </div>
-    </div>
-
-    
- -->
 
   </body>
 

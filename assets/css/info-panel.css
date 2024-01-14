@@ -1,0 +1,277 @@
+.modal-panel {
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);;
+  background-color: ghostwhite;
+  display: none;
+  overflow: hidden;  
+}
+
+.modal-panel-closed {
+
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.modal-panel-open {
+
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+@keyframes frames-open-modal {
+
+  0% {
+
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+
+  100% {
+
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.open-modal {
+
+  animation-name: frames-open-modal;
+  animation-duration: 1s;
+}
+
+@keyframes frames-close-modal {
+
+  0% {
+
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  100% {
+
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.close-modal {
+
+  animation-name: frames-close-modal;
+  animation-duration: 1s;
+}      
+
+.info-panel {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 98px 395px 195px;
+
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+/* info-panel scrollbar configuration */
+.info-panel ::-webkit-scrollbar { width: 10px; }                              /* Width */
+.info-panel ::-webkit-scrollbar-track { background: #F1F1F1; }              /* Track */
+.info-panel ::-webkit-scrollbar-thumb { background: var(--nc-grey); }         /* Handle */
+.info-panel ::-webkit-scrollbar-thumb:hover { background: var(--nc-purple); } /* Handle on Hover */
+
+.info-header {
+
+  grid-column: 1 / 11;
+  grid-row: 1 / 2;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  color: white;
+  background-color: var(--nc-grey);
+}
+
+.info-title-block {
+
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.info-panel-title {
+
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 1rem 0 0.5rem 3rem;
+}
+
+.info-panel-subtitle {
+
+  font-size: 1rem;
+  margin: 0 0 1rem 3rem;  
+}
+
+.info-close-block {
+
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.info-panel-close {
+  
+  color: var(--nc-purple);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 1rem 4rem 0 0;
+  display: block;
+}
+
+.info-panel-close:hover {
+
+  color: white;
+}
+
+.info-carousel-panel {
+
+  grid-column: 1 / 5;
+  grid-row: 2 / 4;
+
+  padding: 2rem 1.5rem 1rem 3rem;
+}
+
+.info-carousel-images {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  
+  overflow: hidden;
+}
+
+.info-carousel-image {
+
+  border: solid 3px var(--nc-grey);
+  object-fit: contain;
+  display: none;
+}
+
+.landscape-info-carousel-image {
+
+  width: 100%;
+  height: auto
+}
+
+.portrait-info-carousel-image {
+
+  width: auto;
+  height: 100%;
+}
+
+.active-info-carousel-image {
+
+  display: block;
+}
+
+.info-carousel-label {
+
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0.75rem 0 1rem 0;
+}
+
+.info-carousel-controls {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.info-carousel-button {
+
+  width: 21px;
+  height: 21px;
+  color: var(--nc-grey);
+  font-weight: bold;
+  text-align: center;
+  border: solid 2px var(--nc-grey);
+  border-radius: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.info-carousel-button:hover, .active-info-carousel-button {
+
+  color: var(--nc-purple);
+  border-color: var(--nc-purple);
+}
+
+.text-content-grid-panel {
+
+  grid-column: 5 / 11;
+  grid-row: 2 / 4;
+
+  padding: 2rem 3rem 1rem 1.5rem;
+}
+
+.text-content-panel {
+  
+  max-height: 100%;
+  padding: 0 1.5rem 0 0;
+  overflow-y: auto;
+}
+
+.text-content {
+
+  color: black;
+  font-size: 1rem;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+.text-content-last {
+
+  margin-bottom: 0 !important;
+}
+
+.text-content-heading {
+
+  color: var(--nc-purple);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1.75rem 0 1rem 0;
+}
+
+.further-link {
+
+  color: blue;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0 0 0;
+}
+
+.further-link:hover {
+
+  color: var(--nc-purple);
+}
+
+.further-link-description {
+
+  color: var(--nc-grey);
+  font-size: 1rem;
+  margin: 0.3rem 0 1rem 0;
+  display: block;
+}

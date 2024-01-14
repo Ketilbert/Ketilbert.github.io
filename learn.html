@@ -1,0 +1,36 @@
+---
+layout: default
+title: The Wentworth Castle Trust
+description: Learn about Wentworth Castle, its history, and its people
+permalink: learn.html
+---
+
+<div id="learn-category-container" class="learn-category-container">
+
+  <p class="learn-header">
+    Learn
+  </p>
+
+  <p class="learn-explainer">
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+  </p>
+
+  {% for item in site.article_tags %}
+   
+    <div class="category-container {{ item.class_name }}">
+      
+      <img class="category-container-image" src="{{ site.baseurl }}/images/category-thumbnails/{{ item.image_file }}">
+
+      <div class="category-description">
+      
+        <h1 class="category-title">{{ item.tag_name }}</h1>
+        <p class="category-text">{{ item.description }}</p>
+        <a href="{{ site.baseurl }}/categories/{{ item.tag_id }}-category.html" class="category-readmore">Read More</a>
+
+      </div>
+
+    </div> 
+
+  {% endfor %}
+
+</div>

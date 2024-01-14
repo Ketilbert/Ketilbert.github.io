@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stainborough Castle Then & Now – The Wentworth Castle Trust – </title>
+    <title>Stainborough Castle Then & Now</title>
 
         <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/learn.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
 
@@ -36,8 +37,13 @@
     <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="/assets/js/utility.js"></script>
     
+    
+    
+
     <script type="text/javascript">
     
+      
+
       let prefix;
       let nav;
       let carousel;
@@ -47,10 +53,10 @@
         prefix = "";  
 
         let links = [
-          { label: "Home", link: "#" },
-          { label: "Explore", link: "#" },
-          { label: "Blog", link: "#" },
-          { label: "About", link: "#" },
+          { label: "Home", link: "/index.html" },
+          { label: "Learn", link: "/learn.html" },
+          { label: "Explore", link: "/explore.html" },
+          { label: "About", link: "/about.html" }
         ];
 
         nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
@@ -61,6 +67,8 @@
           carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
           carousel.buildCarousel();
         }
+
+        
       }
 
     </script>
@@ -68,16 +76,16 @@
   </head>
 
   <body onload="init();">
-    
+
     <div id="main" role="main" class="container">
 
       <nav id="nav">
 
         <a id="menu-toggle" class="menu-toggle">
-          <img src="/assets/interface/menu-toggle.png">
+          <img src="/images/interface/menu-toggle.png">
         </a>
         
-        <img class="nav-menu-image" src="/assets/interface/nc-logo-circle.png">
+        <img class="nav-menu-image" src="/images/interface/nc-logo-circle.png">
 
         <div id="menu-container" class="menu-container menu-container-closed"></div>
 
@@ -129,49 +137,6 @@
 
         
     </div>
-    
-    <!--div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="/" class="site-avatar"><img src="" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">The Wentworth Castle Trust</a></h1>
-            <p class="site-description"></p>
-          </div>
-
-          <nav>
-            <a href="/">Blog1</a>
-            <a href="/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-        </footer>
-      </div>
-    </div>
-
-    
- -->
 
   </body>
 

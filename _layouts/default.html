@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{{ page.title }}</title>
 
     {% include meta.html %}
 
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/banner.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/carousel.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/learn.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/nav-menu.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
@@ -20,8 +21,32 @@
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/nav-menu.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/utility.js"></script>
     
+    
+    {% if page.is_interactive_map != nil %}
+
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/info-panel.css">
+      <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/interactive-map.css">
+
+      <script type="text/javascript" src="assets/js/data.js"></script>
+      <script type="text/javascript" src="assets/js/map-pin.js"></script>
+
+    {% endif %}
+
     <script type="text/javascript">
     
+      {% if page.is_interactive_map != nil %}
+
+      let pins = [
+        new mapPin(0, "Stainborough Castle", "sc", "label-below", null),
+        new mapPin(1, "Wentworth Castle", "wc", "label-below", "wc-interactive-map.html"),
+        new mapPin(2, "Wentworth Castle Gardens", "wcc", "label-below", "wc-gardens-interactive-map.html"),
+        new mapPin(3, "South Avenue", "sa", "label-below", null),
+        new mapPin(4, "Queen Anne Monument", "qam", "label-below", null),
+        new mapPin(5, "Rockley Woodhouse", "rw", "label-below", null)
+      ];
+
+      {% endif %}
+
       let prefix;
       let nav;
       let carousel;
@@ -31,10 +56,10 @@
         prefix = "{{ site.baseurl }}";  
 
         let links = [
-          { label: "Home", link: "#" },
-          { label: "Explore", link: "#" },
-          { label: "Blog", link: "#" },
-          { label: "About", link: "#" },
+          { label: "Home", link: "{{ site.baseurl }}/index.html" },
+          { label: "Learn", link: "{{ site.baseurl }}/learn.html" },
+          { label: "Explore", link: "{{ site.baseurl }}/explore.html" },
+          { label: "About", link: "{{ site.baseurl }}/about.html" }
         ];
 
         nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
@@ -45,6 +70,13 @@
           carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
           carousel.buildCarousel();
         }
+
+        {% if page.is_interactive_map != nil %}
+        
+        for(let a = 0; a < pins.length; a++)
+          pins[a].buildPin(document.getElementById("map-container-grid"));
+
+        {% endif %}
       }
 
     </script>
@@ -52,16 +84,16 @@
   </head>
 
   <body onload="init();">
-    
+
     <div id="main" role="main" class="container">
 
       <nav id="nav">
 
         <a id="menu-toggle" class="menu-toggle">
-          <img src="{{ site.baseurl }}/assets/interface/menu-toggle.png">
+          <img src="{{ site.baseurl }}/images/interface/menu-toggle.png">
         </a>
         
-        <img class="nav-menu-image" src="{{ site.baseurl }}/assets/interface/nc-logo-circle.png">
+        <img class="nav-menu-image" src="{{ site.baseurl }}/images/interface/nc-logo-circle.png">
 
         <div id="menu-container" class="menu-container menu-container-closed"></div>
 
@@ -75,36 +107,6 @@
       {{ content }}
         
     </div>
-    
-    <!--div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog1</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %} -->
 
   </body>
 

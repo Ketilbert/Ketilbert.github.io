@@ -27,6 +27,8 @@
   --nc-grey: #565C6A;
 }
 
+.bold { font-weight: bold; }
+
 @media screen and (min-width: 320px) and (max-width: 575.98px) {
 
   :root {
@@ -224,6 +226,18 @@ body {
 
     grid-column: 1 / 11;
     grid-row: 3 / 4;      
+  }
+
+  .learn-category-container {
+
+    grid-column: 1 / 11;
+    grid-row: 3 / 4;      
+  }
+
+  .learn-article-list {
+
+    grid-column: 1 / 11;
+    grid-row: 3 / 4;          
   }
 
   .latest-posts {

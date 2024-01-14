@@ -1,0 +1,275 @@
+:root {
+
+  --pin-size: 30px;
+  --pin-emphasised-scale: 1.2;
+  --pin-colour: red;
+  --pin-colour-emphasised: blue;
+
+  --label-colour: white;
+  --label-colour-emphasised: black;
+}
+
+.sc { left: 8.5vw; top: 25.5vw; }
+.wc { left: 20.25vw; top: 22.25vw; }
+.wcc { left: 13.5vw; top: 27vw; }
+.sa { left: 25.15vw; top: 31.75vw; }
+.qam { left: 50.75vw; top: 29.5vw; }
+.rw { left: 54.25vw; top: 45.5vw; }
+
+.label-below {
+
+  transform:
+    translateX(calc(-50% + calc(var(--pin-size) / 2)))
+    translateY(var(--pin-size));
+}
+
+.key-grid {
+
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  
+  padding: 2rem 0 0 3rem;
+  position: relative;
+}
+
+.key {
+
+  width: 100%;
+}
+
+.key-heading {
+
+  color: var(--nc-purple);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: solid 2px var(--nc-grey);
+  padding: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.key-row {
+
+  margin: 0 0 1.5rem 0;
+}
+
+.key-icon {
+
+  width: 15%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pin-key-icon {
+
+  width: var(--pin-size);
+  height: var(--pin-size);
+  border: solid calc(var(--pin-size) / 4);
+  border-radius: calc(var(--pin-size) / 2);
+}
+
+.terrain-icon {
+
+  width: var(--pin-size);
+  height: var(--pin-size);
+}
+
+.parkland {
+
+  background-color: #D1FFC8;
+}
+
+.woods {
+
+  background-color: #72CC00;
+}
+
+.key-label {
+
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.key-main-text {
+
+  font-size: 1.2rem;
+}
+
+.key-sub-text {
+
+  font-size: 0.7rem;
+  margin: 0.2rem 0 0 0;
+}
+
+.key-footer {
+
+  color: var(--nc-grey);
+  font-size: 0.8rem;
+  line-height: 1.25;
+  border-top: solid 2px var(--nc-grey);
+  padding: 1rem 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.beyond {
+
+  margin-top: 3rem !important;
+}
+
+.beyond-main-text {
+
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0 0 1.5rem 0;
+}
+
+.beyond-main-text a {
+
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.beyond-main-text a:hover {
+
+  color: var(--nc-purple);
+  text-decoration: underline;
+}
+
+.map-container-grid {
+
+  grid-column: 4 / 11;
+  grid-row: 3 / 4;
+  
+  position: relative;
+}
+
+.map {
+
+  position: absolute;
+  left: 5vw;
+  top: 5vw;
+  width: 60vw;
+  height: auto;
+}
+
+.map-pin {
+
+  position: absolute;
+  width: var(--pin-size);
+  height: var(--pin-size);
+  border: solid calc(var(--pin-size) / 4) var(--nc-purple);
+  border-radius: calc(var(--pin-size) / 2);
+  cursor: pointer;
+}
+
+.diminished-pin {
+
+  scale: 1;
+  opacity: 0.25;
+}
+
+.emphasised-pin {
+
+  scale: var(--pin-emphasised-scale);
+  opacity: 1;
+}
+
+@keyframes frames-emphasise-pin {
+
+  0% {
+
+    scale: 1;
+    opacity: 0.25;
+  }
+
+  100% {
+
+    scale: var(--pin-emphasised-scale);
+    opacity: 1;
+  }
+}
+
+.emphasise-pin {
+
+  animation-name: frames-emphasise-pin;
+  animation-duration: 1s;
+}
+
+@keyframes frames-diminish-pin {
+
+  0% {
+
+    scale: var(--pin-emphasised-scale);
+    opacity: 1;
+  }
+
+  100% {
+
+    scale: 1;
+    opacity: 0.25;
+  }
+}
+
+.diminish-pin {
+
+  animation-name: frames-diminish-pin;
+  animation-duration: 1s;
+}
+
+.map-label {
+
+  position: absolute;
+  font-family: Tahoma;
+  font-size: 13px;        
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.diminished-label {
+
+  color: var(--label-colour);
+}
+
+.emphasised-label {
+
+  color: var(--label-colour-emphasised);
+}
+
+@keyframes frames-emphasise-label {
+
+  0% {
+
+    color: var(--label-colour);
+  }
+
+  100% {
+
+    color: var(--label-colour-emphasised);
+  }
+}
+
+.emphasise-label {
+
+  animation-name: frames-emphasise-label;
+  animation-duration: 1s;
+}
+
+@keyframes frames-diminish-label {
+
+  0% {
+
+    color: var(--label-colour-emphasised);
+  }
+
+  100% {
+
+    color: var(--label-colour);
+  }
+}
+
+.diminish-label {
+
+  animation-name: frames-diminish-label;
+  animation-duration: 1s;
+}

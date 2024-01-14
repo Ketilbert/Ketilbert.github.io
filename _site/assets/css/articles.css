@@ -98,6 +98,25 @@
     margin: var(--vertical-margin) 0 0 0;
   }
 
+  .article-summary-header {
+
+    color: var(--nc-grey);
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: solid 2px var(--nc-purple);
+    padding: 0 0 0.75rem 0;
+    margin: 2rem 4rem 0 4rem !important;    
+  }
+
+  .article-summary-text {
+
+    color: var(--nc-grey);
+    font-size: 1.2rem !important;
+    border-bottom: solid 2px var(--nc-purple);
+    padding: 1rem 0 1rem 0;
+    margin: 0 4rem 2rem 4rem !important;    
+  }
+
   .article-page p {
 
     font-size: 1rem;

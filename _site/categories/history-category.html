@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learn About Wentworth Castle</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    
+    <meta name="author" content="The Wentworth Castle Trust" />
+
+    
+    <meta property="og:title" content="Learn About Wentworth Castle" />
+    <meta property="twitter:title" content="Learn About Wentworth Castle" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/articles.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/learn.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
+    <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
+
+    <script type="text/javascript" src="/assets/js/carousel.js"></script>
+    <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
+    <script type="text/javascript" src="/assets/js/utility.js"></script>
+    
+    
+    
+
+    <script type="text/javascript">
+    
+      
+
+      let prefix;
+      let nav;
+      let carousel;
+
+      function init() {
+
+        prefix = "";  
+
+        let links = [
+          { label: "Home", link: "/index.html" },
+          { label: "Learn", link: "/learn.html" },
+          { label: "Explore", link: "/explore.html" },
+          { label: "About", link: "/about.html" }
+        ];
+
+        nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
+        nav.buildMenu();
+
+        if(document.getElementById("carousel-container") !== null) {
+
+          carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
+          carousel.buildCarousel();
+        }
+
+        
+      }
+
+    </script>
+      
+  </head>
+
+  <body onload="init();">
+
+    <div id="main" role="main" class="container">
+
+      <nav id="nav">
+
+        <a id="menu-toggle" class="menu-toggle">
+          <img src="/images/interface/menu-toggle.png">
+        </a>
+        
+        <img class="nav-menu-image" src="/images/interface/nc-logo-circle.png">
+
+        <div id="menu-container" class="menu-container menu-container-closed"></div>
+
+      </nav>
+
+      <div class="banner">
+        <p class="banner-title">Learn About Wentworth Castle</p>
+        <p class="banner-subtitle">Learn about the castle, its surroundings, and its history</p>
+      </div>
+
+      <div id="learn-article-list" class="learn-article-list">
+
+  <div class="articles">
+  
+    <p class="articles-header">History</p>
+    <!-- Iterate through all the articles in _POSTS -->
+    
+
+      <!-- Filter any posts that are not published or flagged as latest -->
+      
+      
+
+        <div class="article-summary">
+
+          <img src="/images/articles/nc-preview.jpg">
+
+          <div class="article-summary-container">
+
+            <h1>The Northern College</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a href="/The-College/">Read More...</a>
+
+          </div>
+        
+        </div>
+
+      
+      
+    
+    
+
+      <!-- Filter any posts that are not published or flagged as latest -->
+      
+      
+      
+    
+    
+
+      <!-- Filter any posts that are not published or flagged as latest -->
+      
+      
+      
+    
+    
+  
+  </div>  
+
+</div>
+        
+    </div>
+
+  </body>
+
+</html>

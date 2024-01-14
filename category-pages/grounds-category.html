@@ -1,0 +1,41 @@
+---
+layout: default
+title: Learn About Wentworth Castle
+description: Learn about the castle, its surroundings, and its history
+permalink: categories/grounds-category.html
+---
+
+<div id="learn-article-list" class="learn-article-list">
+
+  <div class="articles">
+  
+    <p class="articles-header">The Grounds</p>
+    <!-- Iterate through all the articles in _POSTS -->
+    {% for post in site.posts %}
+
+      <!-- Filter any posts that are not published or flagged as latest -->
+      {% if post.published == true %}
+      {% if post.tag_id == "grounds" %}
+
+        <div class="article-summary">
+
+          <img src="{{ site.baseurl }}/images/articles/{{ post.previewImage }}">
+
+          <div class="article-summary-container">
+
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.previewSummary }}</p>
+            <a href="{{ site.baseurl}}{{ post.url }}">Read More...</a>
+
+          </div>
+        
+        </div>
+
+      {% endif %}
+      {% endif %}
+    
+    {% endfor %}
+  
+  </div>  
+
+</div>
