@@ -137,7 +137,7 @@ class mapPin {
 
     if(this.#link !== null) {
 
-      document.location = this.#link;
+      document.location = ("/explore/" + this.#link);
 
     } else {
 
@@ -262,13 +262,13 @@ class mapPin {
       contentPanel.appendChild(p);
     }
 
-    // If present, add the article links
-    let links = info.links;
+    // If present, add the article external links
+    let links = info.externalLinks;
     if(links.length > 0) {
     
       let heading = document.createElement("p");
       heading.className = "text-content-heading";
-      heading.textContent = "Further Information";
+      heading.textContent = "External Links";
       contentPanel.appendChild(heading);
       
       for(let a = 0; a < links.length; a++) {
@@ -288,7 +288,35 @@ class mapPin {
         desc.textContent = links[a].desc;
         contentPanel.appendChild(desc);      
       }
-    }    
+    } 
+    
+    // If present, add the article internal links
+    links = info.internalLinks;
+    if(links.length > 0) {
+    
+      let heading = document.createElement("p");
+      heading.className = "text-content-heading";
+      heading.textContent = "Internal Links";
+      contentPanel.appendChild(heading);
+      
+      for(let a = 0; a < links.length; a++) {
+
+        let link = document.createElement("a");
+        link.className = "further-link";
+        link.href = links[a].link;
+        link.textContent = links[a].label;
+        contentPanel.appendChild(link);
+      
+        let desc = document.createElement("p");
+        desc.classList.add("further-link-description");
+
+        if(a === (link.length - 1))
+          desc.classList.add("text-content-last");
+
+        desc.textContent = links[a].desc;
+        contentPanel.appendChild(desc);      
+      }
+    }     
   }
 
   #depopulateInfo() {

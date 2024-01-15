@@ -18,10 +18,31 @@ const LOCATIONS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     ],
-    links: [
+    externalLinks: [
       { label: "One article", link: "yes.html", desc: "a brief description" },
       { label: "Another article", link: "no.html", desc: "a brief description" }
+    ],
+    internalLinks: [
+
+      <!-- Iterate through all the articles in _POSTS -->
+      {% assign count = 0 %}
+      {% for post in site.posts %}
+  
+        <!-- Filter any posts that are not published or flagged as latest -->
+        {% if post.published == true %}
+        {% if post.map_location == "Stainborough Castle" %}
+        
+          {% assign count = count | plus: 1 %}
+          {% if count > 1 %} , {% endif %} // Add comma to separate objects
+
+        { label: "{{ post.title }}", link: "{{ site.baseurl}}{{ post.url }}", desc: "{{ post.previewSummary }}" }
+        
+        {% endif %}
+        {% endif %}
+      
+      {% endfor %}
     ]      
+
   },
 
   {

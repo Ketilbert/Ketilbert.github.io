@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Wentworth Castle Trust</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    
+    <meta name="author" content="The Wentworth Castle Trust" />
+
+    
+    <meta property="og:title" content="The Wentworth Castle Trust" />
+    <meta property="twitter:title" content="The Wentworth Castle Trust" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/articles.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/banner.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/learn.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/nav-menu.css" />
+    <link rel="alternate" type="application/rss+xml" title="The Wentworth Castle Trust - " href="/feed.xml" />
+
+    <script type="text/javascript" src="/assets/js/carousel.js"></script>
+    <script type="text/javascript" src="/assets/js/nav-menu.js"></script>
+    <script type="text/javascript" src="/assets/js/utility.js"></script>
+    
+    
+    
+
+      <link rel="stylesheet" type="text/css" href="/assets/css/info-panel.css">
+      <link rel="stylesheet" type="text/css" href="/assets/css/interactive-map.css">
+
+      <script type="text/javascript" src="/assets/js/data.js"></script>
+      <script type="text/javascript" src="/assets/js/map-pin.js"></script>
+
+    
+
+    <script type="text/javascript">
+    
+      
+
+      let pins = [
+        new mapPin(0, "Stainborough Castle", "sc", "label-below", null),
+        new mapPin(1, "Wentworth Castle", "wc", "label-below", "house.html"),
+        new mapPin(2, "Wentworth Castle Gardens", "wcc", "label-below", "gardens.html"),
+        new mapPin(3, "South Avenue", "sa", "label-below", null),
+        new mapPin(4, "Queen Anne Monument", "qam", "label-below", null),
+        new mapPin(5, "Rockley Woodhouse", "rw", "label-below", null)
+      ];
+
+      
+
+      let prefix;
+      let nav;
+      let carousel;
+
+      function init() {
+
+        prefix = "";  
+
+        let links = [
+          { label: "Home", link: "/index.html" },
+          { label: "Learn", link: "/learn.html" },
+          { label: "Explore", link: "/explore/grounds.html" },
+          { label: "About", link: "/about.html" }
+        ];
+
+        nav = new navMenu(document.getElementById("menu-toggle"), document.getElementById("menu-container"), links);
+        nav.buildMenu();
+
+        if(document.getElementById("carousel-container") !== null) {
+
+          carousel = new imageCarousel(document.getElementById("carousel-container"), document.getElementById("carousel-controls"));
+          carousel.buildCarousel();
+        }
+
+        
+        
+        for(let a = 0; a < pins.length; a++)
+          pins[a].buildPin(document.getElementById("map-container-grid"));
+
+        
+      }
+
+    </script>
+      
+  </head>
+
+  <body onload="init();">
+
+    <div id="main" role="main" class="container">
+
+      <nav id="nav">
+
+        <a id="menu-toggle" class="menu-toggle">
+          <img src="/images/interface/menu-toggle.png">
+        </a>
+        
+        <img class="nav-menu-image" src="/images/interface/nc-logo-circle.png">
+
+        <div id="menu-container" class="menu-container menu-container-closed"></div>
+
+      </nav>
+
+      <div class="banner">
+        <p class="banner-title">The Wentworth Castle Trust</p>
+        <p class="banner-subtitle">Explore the house and grounds with our interactive map</p>
+      </div>
+
+      <div class="key-grid">
+
+  <div class="key">
+
+    <p class="key-heading">Key</p>
+
+    <div class="key-row">
+      <div class="key-icon">
+        <div class="pin-key-icon"></div>
+      </div>
+      <div class="key-label">
+        <p class="key-main-text">Place of Interest</p>
+        <p class="key-sub-text">Click Places of Interest for more information</p>
+      </div>
+    </div>
+
+    <div class="key-row">
+      <div class="key-icon">
+        <div class="terrain-icon parkland"></div>
+      </div>
+      <div class="key-label">
+        <p class="key-main-text">Parkland</p>
+      </div>
+    </div>
+    
+    <div class="key-row">
+      <div class="key-icon">
+        <div class="terrain-icon woods"></div>
+      </div>
+      <div class="key-label">
+        <p class="key-main-text">Woodland / Copse</p>
+      </div>
+    </div>
+
+    <p id="key-footer" class="key-footer">Please be aware that these maps are illustrative and not intended to be used for navigation. They do not indicate public access nor any hazards or dangers.</p>
+
+    <p class="key-heading beyond">Beyond the Estate</p>
+    <p class="beyond-main-text">
+      The Wentworth family were tremendously wealthy, and owned property across the country.
+      They were also prolific builders of follies and monuments, and their name is associated with many roads and buildings, particularly around Barnsley.
+    </p>
+    <p class="beyond-main-text">  
+      To learn about those buildings associated with the Wentworth family, but which lay outside of the estate, click <a href="beyond-the-estate.html">here</a>.
+    </p>
+
+  </div>
+
+</div>
+
+<div id="map-container-grid" class="map-container-grid">
+  <img class="map" src="/images/interactive-map/estate.png">
+</div>
+
+</div>
+
+<div id="modal-panel" class="modal-panel modal-panel-closed">
+
+  <div id="info-panel" class="info-panel">
+
+    <div class="info-header">
+
+      <div class="info-title-block">
+        <p id="info-panel-title" class="info-panel-title"></p>
+        <p id="info-panel-subtitle" class="info-panel-subtitle"></p>
+      </div>
+
+      <div class="info-close-block">
+        <a id="info-panel-close" href="#" class="info-panel-close"><span id="info-x" class="info-x">&#10005;</span>&nbsp;&nbsp;close</a>
+      </div>
+
+    </div>
+
+    <div id="info-carousel-panel" class="info-carousel-panel">
+
+      <div id="info-carousel-images" class="info-carousel-images"></div>
+      <p id="info-carousel-label" class="info-carousel-label"></p>
+      <div id="info-carousel-controls" class="info-carousel-controls"></div>
+
+    </div>
+
+    <div id="text-content-grid-panel" class="text-content-grid-panel">
+      <div id="text-content-panel" class="text-content-panel"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<img id="waiting" src="/images/interactive-map/waiting.png" style="display: none;">
+        
+    </div>
+
+  </body>
+
+</html>
